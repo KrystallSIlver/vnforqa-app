@@ -7,7 +7,7 @@ import { Alternative } from '../Models/alternative.model';
 })
 export class AnalizatorService {
 
-    urlApi = "/api/Analizator/";
+    urlApi = "https://vnforqa-api.herokuapp.com/api/Analizator/";
     constructor(private http:HttpClient) { }    
  
     GetSaatyTable(array: Alternative[]) {

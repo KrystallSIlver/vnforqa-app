@@ -11,7 +11,7 @@ export class UserService {
 
     constructor(private http: HttpClient) {}
 
-    urlApi = "/api/SampleData/";
+    urlApi = "https://vnforqa-api.herokuapp.com/api/SampleData/";
 
     newUser() {
         return this.http.post(this.urlApi+"User",'');
