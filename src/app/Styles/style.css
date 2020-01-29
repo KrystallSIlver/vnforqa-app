@@ -1,0 +1,27 @@
+.left {
+    margin-left: auto;
+    width: 200px;
+    float: right;
+  }
+  
+  .bg{
+    background-color: #eeffe3;
+  }
+  
+  .marg {
+    margin-top: 20px;
+  }
+  
+  .btn-subm-right {
+    float: right;    
+  }
+  
+  input[type="range"] {
+    /* width: 75%; */
+    margin-left: auto;
+    padding-top: 3px;
+  }
+  
+  .inline-range {
+    display: inline;
+  }

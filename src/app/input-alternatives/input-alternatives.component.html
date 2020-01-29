@@ -1,0 +1,58 @@
+<div *ngIf="!choseMarks">
+      <div class="form-inline d-flex justify-content-center pt-3">
+        <h4 class="form-group mb-2 mr-1 pr-2">Введіть кількість альтернатив: </h4>
+        <input type="number" class="bg form-control brc" tooltip="1-10" [theme]="'light'" [(ngModel)]="totalAlternativesCount" min="1" max="10" (change)="MaxChanged()">
+      </div>
+      <div class="d-flex justify-content-center">
+        <button class="btn btn-primary mb-2 mt-3 wht d-flex justify-content-center btn-subm-center" (click)="ChangeView()">{{inputAlternatives == true ? "Перейти до введення назв альтернатив" : "Введення кількості альтернатив"}}</button>
+      </div>
+    <div style="width: 60%;" class="d-flex mx-auto justify-content-center flex-wrap wid" *ngIf="!inputAlternatives">
+      <div class="d-flex mx-2 mt-4" *ngFor="let a of Alternatives">
+        <h4 class="d-inline-block mb-2 mr-1">a{{a.id}}:</h4>
+        <input type="text" class="d-inline-block bg brc form-control" placeholder="{{'a'+a.id}}" [(ngModel)]="a.name">
+      </div>
+    </div>
+    <div class="d-flex justify-content-center pb">
+      <button class="btn btn-primary mb-2 mt-3 wht btn-subm-center" [hidden]="inputAlternatives" (click)="topFunction()" (click)="SwitchView()">Оберіть набір оцінок для альтернатив</button>
+    </div>
+</div>
+
+
+<div *ngIf="choseMarks">
+    <div class="d-flex justify-content-center flex-wrap">
+      <div class="d-inline-block p-4 pd">
+        <ul class="wt list-group text-center">
+          <li class="brt bg brc list-group-item">Дуже добре</li>
+          <li class="bg brc list-group-item">Добре</li>
+          <li class="bg brc list-group-item">Посередньо (Байдуже)</li>
+          <li class="bg brc list-group-item">Погано</li>
+          <li class="brb bg brc list-group-item">Дуже погано</li>
+          <li class="bct align-self-center bg brc list-group-item"><button class="btn btn-outline-primary full" [ngClass]="{active : MarkType == 1}" (click)="MarkType = 1">Обрати</button></li>
+        </ul>
+      </div>
+      <div class="d-inline-block p-4 pd">
+          <ul class="wt list-group text-center">
+            <li class="brt bg brc list-group-item">Категорично за</li>
+            <li class="bg brc list-group-item">За</li>
+            <li class="bg brc list-group-item">Байдуже</li>
+            <li class="bg brc list-group-item">Проти</li>
+            <li class="brb bg brc list-group-item">Категорично проти</li>
+            <li class="bct align-self-center bg brc list-group-item"><button class="btn btn-outline-primary full" [ngClass]="{active : MarkType == 2}" (click)="MarkType = 2">Обрати</button></li>
+          </ul>
+      </div>
+      <div class="d-inline-block p-4 pd">
+          <ul class="wt list-group text-center">
+            <li class="brt bg brc list-group-item">Абсолютно погоджуюсь</li>
+            <li class="bg brc list-group-item">Погоджуюсь</li>
+            <li class="bg brc list-group-item">Не знаю</li>
+            <li class="bg brc list-group-item">Не погоджуюсь</li>
+            <li class="brb bg brc list-group-item">Категорично не погоджуюсь</li>
+            <li class="bct align-self-center bg brc list-group-item"><button class="btn btn-outline-primary full" [ngClass]="{active : MarkType == 3}" (click)="MarkType = 3">Обрати</button></li>
+          </ul>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center pb">
+      <button class="btn btn-primary mb-2 mt-3 wht btn-subm-center" (click)="topFunction()" (click)="ChangeViewToMarks()">Перейти до оцінювання альтернатив</button>
+    </div>
+    
+</div>

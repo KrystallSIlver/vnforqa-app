@@ -1,0 +1,36 @@
+.wht {
+    width: 350px;
+}
+
+.wt {
+    width: 16rem;
+}
+
+.brt {
+    border-top-left-radius: 0.75rem !important;
+    border-top-right-radius: 0.75rem !important;
+}
+
+.brb {
+    border-bottom-left-radius: 0.75rem !important;
+    border-bottom-right-radius: 0.75rem !important;
+}
+
+.bct {
+    border-color: #8a8ad2 transparent transparent;
+    width: 90%;
+}
+
+@media (max-width: 575.98px) {
+    .wid {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .pd {
+        padding: 0.5rem !important;
+    }
+    .pb {
+        padding-bottom: 1rem !important;
+    }
+}

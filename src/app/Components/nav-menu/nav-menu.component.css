@@ -1,0 +1,50 @@
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+.bg{
+  background-color: #77dafc6b!important;
+  opacity: 0.85;
+}
+
+.btn {
+  width: 16rem;
+  font-size: 1.15rem;
+}
+
+.pld {
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+}
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .dntsh {
+    display: none;
+  }
+  .btnalg {
+    display: flex;
+    justify-content: center;
+    padding-top: 0.5rem;
+    padding-left: 0rem !important;
+  }
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+.btn {
+  height: 3.5rem;
+}

@@ -1,0 +1,26 @@
+<header>
+  <div class='navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg border-bottom box-shadow mb-3'>
+    <div class="container">
+      <a class="navbar-brand" (click)="openDialog()">
+        <img src="https://i.ibb.co/ydTXH2M/Voting-App.png" alt="VNforQALogo" tooltip="Почати нове голосування" data-placement="bottom" [theme]="'light'" height="85">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-label="Toggle navigation"
+        [attr.aria-expanded]="isExpanded" (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <a class="dntsh navbar-brand justify-content-center pld">
+          <img class="img-fluid" src="https://i.ibb.co/d0vGzmr/image.png" alt="VNforQA" height="70">
+        </a>
+      <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" [ngClass]='{"show": isExpanded}'>
+        <ul class="navbar-nav d-flex">
+          <li class="nav-item btnalg" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+            <button type="button" class="btn btn-outline-primary" mat-raised-button (click)="openDialog()">Почати нове голосування</button>
+          </li>
+          <!-- <li class="nav-item pl-4 btnalg" [routerLinkActive]='["link-active"]'>
+            <button type="button" class="btn btn-outline-secondary" [routerLink]='["/results"]'>Результати</button>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

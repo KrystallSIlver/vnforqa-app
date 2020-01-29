@@ -1,0 +1,122 @@
+ul {
+    padding-left: 0;
+}
+
+.wtn {
+    min-width: 12rem !important;
+}
+
+.table {
+    text-align: center;
+}
+
+.tov {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    min-width: 6.5rem;
+    max-width: 6.5rem;
+}
+
+.tovli {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 12rem;
+}
+
+.tovd {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 3.15rem;
+}
+
+.tovd:hover {
+    /* overflow: inherit; */
+    text-overflow: inherit;
+    white-space: inherit;
+    height: auto;
+    word-wrap: break-word;
+    max-width: unset;
+}
+
+th {
+    max-width: 3rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.mwd {
+    max-width: 10rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.mwd:hover {
+    overflow: inherit;
+    text-overflow: inherit;
+    white-space: inherit;
+    height: auto;
+    word-wrap: break-word;
+}
+
+
+@media only screen and (min-width: 575.98px) {
+    h6 {
+        display: none !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .smrt {
+        display: none !important;
+    }
+    .pdsm {
+        padding-left: 2.5rem;
+    }
+    span {
+        word-wrap: break-word;
+        justify-content: flex-start !important;
+    }
+    .wtn {
+        min-width: 9rem !important;
+    }
+    .wt {
+        display: none !important;
+    }
+    b {
+        font-size: smaller !important;
+    }
+    .tovli {
+        max-width: 9rem !important;
+    }
+    .pd {
+        padding: 0 !important;
+    }
+    .savebtn {
+        display: none;
+    }
+    h6 {
+        display: block;
+    }
+    go-to-top-button {
+        display: none;
+    }
+}
+.plr {
+    padding-left: 12.5%;
+    padding-right: 12.5%;
+    margin-bottom: 0.15%
+}
+
+.stl {
+    border: solid;
+    border-width: 1px;
+    padding: 0.7rem;
+    border-color: #8a8ad2;
+    border-radius: 1.75rem !important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.lbl {
+    font-size: 1.15rem;
+}

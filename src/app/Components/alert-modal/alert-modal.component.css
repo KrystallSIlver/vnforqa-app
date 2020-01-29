@@ -1,0 +1,27 @@
+.mat-dialog-title {
+    margin-bottom: 0 !important;
+    justify-content: center;
+    font-size: 200%;
+}
+
+.mat-dialog-actions {
+    justify-content: space-around;
+    margin-bottom: -8px !important;
+}
+
+h3 {
+    text-align: center;
+}
+
+.wth {
+    width: 6rem;
+}
+
+@media (max-width: 575.98px) {
+    .pdk {
+        padding-top: 0.5rem;
+    }
+    .mat-dialog-title {
+        font-size: 165%;
+    }
+}

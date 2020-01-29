@@ -1,0 +1,6 @@
+<div *ngIf="!isResultView">
+    <input-alternatives [(Alternatives)]="alternatives" [(alternativesEntered)]="isAlternativesEntered" [(MarkType)]="markType" *ngIf="!isAlternativesEntered" ></input-alternatives>
+    <input-alternative-marks [Alternatives]="alternatives" [MarkType]="markType" [(isVisible)]="isResultView" [(markArray)]="markArray" [(probArray)]="probArray" [(normalizedArray)]="normalizedArray" *ngIf="isAlternativesEntered"></input-alternative-marks>
+<!-- <voting-graph [Experts]="Experts" [Alternatives]="alternatives" *ngIf="isGraphVisible"></voting-graph> -->
+</div>
+<result-view *ngIf="isResultView" [(markArray)]="markArray" [(probArray)]="probArray" [(normalizedArray)]="normalizedArray"></result-view>

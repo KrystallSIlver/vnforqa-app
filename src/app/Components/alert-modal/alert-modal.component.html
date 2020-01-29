@@ -1,0 +1,25 @@
+<div *ngIf="closeContinue; else elseBlock">
+  <h3 mat-dialog-title>Попередні результати</h3>
+  <h3 mat-dialog-title>будуть втрачені!</h3>
+    <div mat-dialog-actions class="pt-4">
+      <div>
+        <button class="btn btn-danger btn-lg" [mat-dialog-close]="true" mat-button (click)="onNoClick()">Скасувати</button>
+      </div>
+      <div class="pdk">
+        <button style="float:right" class="btn btn-success btn-lg" mat-button (click)="askTemplate()" cdkFocusInitial>Продовжити</button>
+      </div>
+    </div>
+</div>
+
+<ng-template #elseBlock>
+  <h3 mat-dialog-title>Ті ж самі</h3>
+  <h3 mat-dialog-title>альтернативи?</h3>
+    <div mat-dialog-actions class="pt-4">
+      <div>
+        <button class="btn btn-danger btn-lg wth" mat-button (click)="reload()">Ні</button>
+      </div>
+      <div>
+        <button style="float:right" class="btn btn-success btn-lg wth" mat-button (click)="reloadWithAlternatives()" cdkFocusInitial>Так</button>
+      </div>
+    </div>
+</ng-template>
