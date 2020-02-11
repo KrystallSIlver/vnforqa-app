@@ -17,7 +17,7 @@
         <ul class="d-inline-block smrt" tooltip="K-шкала" data-placement="top" [theme]="'light'">
           <li class="list-group-item tov" *ngFor="let alt of saatyKolTableSorted">{{alt.mark}}</li>
         </ul>
-        <ul class="d-inline-block smrt" tooltip="Вербальний метод" data-placement="top" [theme]="'light'">
+        <ul class="d-inline-block smrt" tooltip="Шкала Сааті" data-placement="top" [theme]="'light'">
           <li class="list-group-item tov" *ngFor="let alt of bestMarks">{{alt.mark}}</li>
         </ul>
         <ul class="d-inline-block">
@@ -84,7 +84,7 @@
           {{row.name}}
         </td>
         <td *ngFor="let alt of row.marks">
-          {{ alt.rate < 0 ? null : alt.rate < 1 ? alt.rate.toFixed(2) : alt.rate}}
+          {{ alt.rate < 0 ? null : !isInteger(alt.rate) ? alt.rate.toFixed(2) : alt.rate}}
         </td>
         <td>{{!isInteger(row.ei) ? row.ei.toFixed(2) : row.ei}}</td>
         <td>{{row.omega < 1 ? (row.omega).toFixed(4) : row.omega}}</td>
@@ -125,7 +125,7 @@
 </div>
 
 <h4 class="justify-content-center pt-3" *ngIf="bestProb && bestProb.name">
-  Візуальнй метод:<br>
+  Візуальний метод:<br>
 </h4>
 
 <div class="smrt" *ngIf="bestProbs" #saatyProp>
