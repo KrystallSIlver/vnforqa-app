@@ -10,7 +10,7 @@ const corsUrl = "https://cors-anywhere.herokuapp.com/";
 export class AnalizatorService {
 
     urlApi = "https://vnforqa-api.herokuapp.com/api/Analizator/";
-    corsUrlApi = corsUrl + this.urlApi;
+    corsUrlApi = this.urlApi;
 
     constructor(private http:HttpClient) { }    
  
