@@ -29,7 +29,7 @@
         <ul class="d-inline-block">
           <li class="list-group-item tovli wtn" *ngFor="let alt of bestNormalized" [ngStyle]="{'background-color': getMarkColor(alt.id)}">{{alt.name}}</li>
         </ul>
-        <ul class="d-inline-block smrt" tooltip="Візуальний метод" data-placement="top" [theme]="'light'">
+        <ul class="d-inline-block smrt" tooltip="Слайдери" data-placement="top" [theme]="'light'">
           <li class="list-group-item tov" *ngFor="let alt of bestNormalized">{{alt.mark}}</li>
         </ul>
         <ul class="d-inline-block smrt" tooltip="Шкала Сааті" data-placement="top" [theme]="'light'">
@@ -59,6 +59,74 @@
 <h6 class="d-flex justify-content-center">
     <i>Для більш детального аналізу використовуйте версію для комп'ютера</i>
 </h6>
+
+<h4 class="justify-content-center pt-3" *ngIf="bestProb && bestProb.name">
+  Вербальний метод:
+</h4>
+
+<div class="smrt" *ngIf="bestProbs" #saatyProp>
+  <h5>
+      K-шкала:
+  </h5>
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>&#8195;</th>
+        <th *ngFor="let alt of probArray">{{alt.name}}</th>
+        <th>e<sub>i</sub></th>
+        <th>&omega;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of saatyKolTable.rows">
+        <td class="mwd">
+          {{row.name}}
+        </td>
+        <td *ngFor="let alt of row.marks">
+          {{ alt.rate < 0 ? null : alt.rate < 1 ? alt.rate.toFixed(2) : alt.rate}}
+        </td>
+        <td>{{!isInteger(row.ei) ? row.ei.toFixed(2) : row.ei}}</td>
+        <td>{{row.omega < 1 ? (row.omega).toFixed(4) : row.omega}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<div class="smrt" *ngIf="bestProbs" #saatyMark>    
+  <h5>
+      Метод аналізу ієрархій (шкала Сааті) за вербальним методом:
+  </h5>
+  <div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>&#8195;</th>
+        <th *ngFor="let alt of markArray">{{alt.name}}</th>
+        <th>e<sub>i</sub></th>
+        <th>&omega;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of markSaatyTable.rows">
+        <td class="mwd">
+          {{row.name}}
+        </td>
+        <td *ngFor="let alt of row.marks">
+          {{ alt.rate < 0 ? null : alt.rate < 1 ? alt.rate.toFixed(2) : alt.rate}}
+        </td>
+          <td>{{!isInteger(row.ei) ? row.ei.toFixed(2) : row.ei}}</td>
+        <td>{{row.omega < 1 ? (row.omega).toFixed(4) : row.omega}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<h4 class="justify-content-center pt-3" *ngIf="bestProb && bestProb.name">
+  Візуальнй метод:<br>
+</h4>
 
 <div class="smrt" *ngIf="bestProbs" #saatyProp>
       <h5>
@@ -150,35 +218,7 @@
 </div>
 </div>
 
-<div class="smrt" *ngIf="bestProbs" #saatyMark>    
-  <h5>
-      Метод аналізу ієрархій (шкала Сааті) за вербальним методом:
-  </h5>
-  <div>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>&#8195;</th>
-        <th *ngFor="let alt of markArray">{{alt.name}}</th>
-        <th>e<sub>i</sub></th>
-        <th>&omega;</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let row of markSaatyTable.rows">
-        <td class="mwd">
-          {{row.name}}
-        </td>
-        <td *ngFor="let alt of row.marks">
-          {{ alt.rate < 0 ? null : alt.rate < 1 ? alt.rate.toFixed(2) : alt.rate}}
-        </td>
-          <td>{{!isInteger(row.ei) ? row.ei.toFixed(2) : row.ei}}</td>
-        <td>{{row.omega < 1 ? (row.omega).toFixed(4) : row.omega}}</td>
-      </tr>
-    </tbody>
-  </table>
-  </div>
-</div>
+
 
   <!-- <div class="d-flex justify-content-center pb-3">
     <div>

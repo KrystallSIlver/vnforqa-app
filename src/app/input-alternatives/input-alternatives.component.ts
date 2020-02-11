@@ -55,7 +55,7 @@ export class InputAlternativesComponent implements OnInit {
 
   MaxChanged() {
     if(this.totalAlternativesCount > 10) this.totalAlternativesCount = 10;
-    if(this.totalAlternativesCount < 1) this.totalAlternativesCount = 1;
+    if(this.totalAlternativesCount < 2) this.totalAlternativesCount = 2;
   }
 
   CheckIsAltsEntered() {

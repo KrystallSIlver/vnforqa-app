@@ -74,7 +74,7 @@ export class ResultViewComponent implements OnInit {
 
             this.saatyTableSorted = this.sorting(this.saatyTable.normalizedSqrts);
             this.markSaatyTableSorted = this.sorting(this.markSaatyTable.normalizedSqrts);
-            this.saatyKolTableSorted = this.sorting(this.saatyKolTable.normalizedSqrts);
+            this.saatyKolTableSorted = this.sorting(this.saatyKolTable.normalizedSqrts, true);
             this.saaty99TableSorted = this.sorting(this.Saaty99Table.normalizedSqrts);
             this.visualTableSorted = this.sorting(this.visualTable.normalizedSqrts);
             this.getUncoloredIds();
@@ -91,10 +91,12 @@ export class ResultViewComponent implements OnInit {
     return array.sort((a,b) => (a.mark < b.mark) ? 1 : ((b.mark < a.mark) ? -1 : 0));
   }
 
-  sorting(array: Alternative[]) {
+  sorting(array: Alternative[], verbal: boolean = false) {
     var temp: Alternative[] = [];
 
-    this.bestNormalized.forEach(x => {
+    var arr = verbal ? this.bestMarks : this.bestNormalized
+
+    arr.forEach(x => {
       temp.push(array.find(y=>y.id == x.id));
     });
 
